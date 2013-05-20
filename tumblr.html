@@ -1,0 +1,166 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+	<head>
+		<title>{Title}</title>
+        <link rel="shortcut icon" href="{Favicon}">
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="{RSS}">
+		<link rel="stylesheet" type="text/css" href="http://colonelalexi.cz.cc/projects/moon-theme/style.css">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	</head>
+	<body>
+		<div id="head">
+		<a href="/"><h1>{Title}</h1></a>
+		</div><!-- /div#head -->
+		<div id="mid">
+			<div class="main">
+				<ul id="the_posts">{block:Posts}
+					<li class="post {block:Quote}quote-post{/block:Quote}">
+						<h2 class="post-title"><a href="{Permalink}">
+							{block:Text}{Title}{/block:Text}
+							{block:Photo}Photo{/block:Photo}
+							{block:Photoset}Photoset{/block:Photoset}
+							{block:Panorama}Panorama{/block:Panorama}
+							{block:Quote}Quote{/block:Quote}
+							{block:Link}Link{/block:Link}
+							{block:Chat}Chat{/block:Chat}
+							{block:Video}Video{/block:Video}
+							{block:Audio}Audio{/block:Audio}
+							{block:Answer}Answer{/block:Answer}
+						</a></h2>
+						<div class="post-body clear">
+							{block:Text}{Body}{/block:Text}
+							{block:Photo}
+								<img src="{PhotoURL-500}" alt="{PhotoAlt}">
+								{block:Caption}
+									<div class="caption">{Caption}</div><!-- /div.caption -->
+								{/block:Caption}
+							{/block:Photo}
+							{block:Photoset}
+								{Photoset-500}
+								{block:Caption}
+									<div class="caption">{Caption}</div><!-- /div.caption -->
+								{/block:Caption}
+							{/block:Photoset}
+							{block:Panorama}
+								{LinkOpenTag}
+									<img src="{PhotoURL-500}" alt="{PhotoAlt}">
+								{LinkCloseTag}
+								{block:Caption}
+									<div class="caption">{Caption}</div><!-- /div.caption -->
+								{/block:Caption}
+							{/block:Panorama}
+							{block:Quote}
+								<blockquote class="quote">{Quote}</blockquote>
+								{block:Source}
+									<div class="caption">{Source}</div><!-- /div.caption -->
+									<div class="clear"></div>
+								{/block:Source}					
+							{/block:Quote}
+							{block:Link}
+								<h3>&gt;&gt;&nbsp;<a href="{URL}" {Target}>{Name}</a></h3>
+								{block:Description}
+									<div class="caption">{Description}</div><!-- /div.caption -->
+								{/block:Description}
+							{/block:Link}
+							{block:Chat}
+								<ul class="chat">
+									{block:Lines}
+										<li class="{Alt}">
+											{block:Label}<strong>{Label}:</strong>{/block:Label} {Line}
+										</li>
+									{/block:Lines}
+								</ul><!-- /ul.chat -->
+							{/block:Chat}
+							{block:Video}
+								{Video-500}
+								{block:Caption}
+									<div class="caption">{Caption}</div><!-- /div.caption -->
+								{/block:Caption}
+							{/block:Video}
+							{block:Audio}
+								{AudioPlayerBlack}
+								{block:Caption}
+									<div class="caption">{Caption}</div><!-- /div.caption -->
+								{/block:Caption}
+							{/block:Audio}
+							{block:Answer}
+								<div class="question">
+									<p>{Question}</p>
+									<div class="asker">{Asker}&nbsp;&nbsp;&nbsp;<img src="{AskerPortraitURL-30}" alt="{Asker}"></div>
+								</div>
+								<div class="caption">{Answer}</div><!-- /div.caption -->
+							{/block:Answer}
+						</div><!-- /div.post-body -->
+						<div class="post-meta clear">
+							{block:HasTags}
+								<h5>{block:Tags}<a href="{TagURL}">#{Tag}</a>,&nbsp;{/block:Tags}</h5>
+							{/block:HasTags}
+							{block:Date}<h5>{block:Text}<a href="{Permalink}">Text</a>&nbsp;{/block:Text}posted {TimeAgo} on the {DayOfMonth}{DayOfMonthSuffix} of {Month}, {Year} at {12Hour}{AmPm}</h5>{/block:Date}
+							{block:RebloggedFrom}
+								<h5>Reblogged from {ReblogParentName} (<a href="{ReblogParentURL}">{ReblogParentTitle}</a>), originally posted by {ReblogRootName} (<a href="{ReblogRootURL}">{ReblogRootTitle}</a>)</h5>
+							{/block:RebloggedFrom}
+							{block:ContentSource}
+								<a href="{SourceURL}">
+									{lang:Source}:
+									{block:SourceLogo}
+										<img src="{BlackLogoURL}" width="{LogoWidth}" height="{LogoHeight}" alt="{SourceTitle}">
+									{/block:SourceLogo}
+									{block:NoSourceLogo}
+										{SourceTitle}
+									{/block:NoSourceLogo}
+								</a>
+							{/block:ContentSource}
+							{block:NoteCount}
+								<h5>with <a href="{Permalink}">{NoteCountWithLabel}</a></h5>
+							{/block:NoteCount}
+							{block:PostNotes}{PostNotes-16}{/block:PostNotes}
+						</div><!-- /div.post-meta -->
+					</li><!-- /li.post -->
+				{/block:Posts}</ul><!-- /ul#posts -->
+			</div><!-- /div.main -->
+			<div class="side">
+				{block:Description}<div class="widget description">
+					<h2>About</h2>
+						<a href="/"><img src="{PortraitURL-128}" alt="{Title}"></a>
+						{Description}
+				</div><!-- /div.widget .description -->{/block:Description}
+				<div class="widget pages">
+					<h2>Pages</h2>
+                    <ul class="links">
+						<li><a href="/">Home</a></li>
+                        {block:HasPages}{block:Pages}
+                            <li><a href="{URL}">{Label}</a></li>
+                        {/block:Pages}{/block:HasPages}
+						{block:AskEnabled}
+                            <li><a href="/ask">{AskLabel}</a></li>
+						{/block:AskEnabled}
+						{block:SubmissionsEnabled}
+                            <li><a href="/submit">{SubmitLabel}</a></li>
+						{/block:SubmissionsEnabled}
+                        <li><a href="/archive">Archive</a></li>
+                    </ul>
+				</div><!-- /div.widget .pages -->
+				{block:Pagination}<div class="widget pagination">
+						{block:PermalinkPage}
+							{block:PreviousPost}<h3><a href="{PreviousPost}">Next Newer Post</a></h3>{/block:PreviousPost}
+							{block:NextPost}<h3><a href="{NextPost}">Previous Older Post</a></h3>{/block:NextPost}
+						{/block:PermalinkPage}
+						{block:PreviousPage}<h3><a href="{PreviousPage}">Newer Posts</a></h3>{/block:PreviousPage}
+						{block:NextPage}<h3><a href="{NextPage}">Older Posts</a></h3>{/block:NextPage}
+				</div><!-- /div.widget .pagination -->{/block:Pagination}
+			</div><!-- /div.side -->
+		</div><!-- /div#mid -->
+		<div id="foot">
+			{block:Pagination}
+				{block:PermalinkPage}<p>
+					{block:PreviousPost}<a href="{PreviousPost}">Next Newer Post</a>, {/block:PreviousPost}
+					{block:NextPost}<a href="{NextPost}">Previous Older Post</a>{/block:NextPost}
+				</p>{/block:PermalinkPage}
+				<p>{block:PreviousPage}<a href="{PreviousPage}">Newer Posts</a>, {/block:PreviousPage}
+				{block:NextPage}<a href="{NextPage}">Older Posts</a>{/block:NextPage}</p>
+			{/block:Pagination}
+		</div><!-- /div#foot -->
+	</body>
+</html>

@@ -1,0 +1,49 @@
+/* Reset  */
+*{margin:0;padding:0;font:14pt/18pt Arial, serif;}
+html{background:url('bg.png') no-repeat top center black;margin:0 auto;width:100%;}
+body{color:#efbc6a;position:relative;width:900px;margin:0 auto;}
+.clear{clear:both;}
+
+a:link{color:#f90;border-bottom:#f90 1px solid;text-decoration:none;padding-bottom:.1em;margin-bottom:.2em;}
+a:visited{color:#a90;border-bottom-color:#a90;}
+a:hover,a:visited:hover{color:#f40;border-bottom-color:#f40;font-weight:bold;}
+
+h1 a:link,h1 a:visited,h1 a:hover,h1 a:visited:hover,
+h2 a:link,h2 a:visited,h2 a:hover,h2 a:visited:hover,
+h3 a:link,h3 a:visited,h3 a:hover,h3 a:visited:hover,
+h4 a:link,h4 a:visited,h4 a:hover,h4 a:visited:hover,
+h5 a:link,h5 a:visited,h5 a:hover,h5 a:visited:hover,
+h6 a:link,h6 a:visited,h6 a:hover,h6 a:visited:hover{border:0px;}
+
+#head{height:200px;width:100%;position:relative;}
+	#head h1{right:0;bottom:0;position:absolute;font:60pt/65pt 'AR BLANCA', script;color:#efbc6a;text-shadow:5px 5px 5px #111;}
+#mid{width:100%;margin-top:50px;}
+	#mid strong{font-weight:bold;color:#f40;}
+	#mid h1{font:20pt/26pt Arial, serif;font-weight:bold;}
+	#mid h2{font:18pt/24pt Arial, serif;font-weight:bold;}
+	#mid h3{font:16pt/22pt Arial, serif;font-weight:bold;}
+	#mid h4{font:14pt/20pt Arial, serif;font-weight:bold;}
+	#mid h5{font:12pt/18pt Arial, serif;font-weight:bold;}
+	#mid h6{font:10pt/16pt Arial, serif;font-weight:bold;}
+	#mid p{font:14pt/20pt Arial, serif;padding:10px 0;}
+	#mid li{font:14pt/20pt Arial, serif;}
+	#mid blockquote{font:14pt/20pt Arial, serif;padding:5px 0 5px 10px;margin:0;border-left:3px solid #f90;
+					margin-left:10px;background:rgba(34, 34, 34, 0.3);}
+
+	.main{float:left;width:600px;min-height:500px;}
+		#the_posts{list-style:none;}
+			#the_posts>li{padding:20px 0;margin:0;border-top:1px solid #850;border-bottom:1px solid #850;}
+		.post{padding:50px;}
+			.post-body ol{list-style:inside decimal;padding:10px 0;}
+			.post-body ul{list-style:inside square;padding:10px 0;}
+				ul.chat{list-style:none;padding-left:15px;}
+				.question, .quote{position:relative;background:#222;border-radius:15px;padding:15px;}
+					.question .asker{position:absolute;bottom:0;right:0;padding:5px 15px;background:#333;line-height:32px;color:#ef6;}
+				.quote-post .caption{float:right;}
+				.caption{padding:10px 15px;}
+			.post-meta{background:rgba(34, 34, 34, 0.35);color:#ef6;border-bottom-left-radius:15px;border-bottom-right-radius:15px;
+				padding:0 15px 15px;margin-top:15px;}
+	.side{float:right;width:295px;min-height:500px;}
+		.widget{padding:10px 50px;}
+		.links{list-style:none;}
+#foot{height:200px;width:100%;clear:both;background:url('foot-bg.png') no-repeat bottom center black;}
